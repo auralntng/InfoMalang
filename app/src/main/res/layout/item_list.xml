@@ -29,22 +29,7 @@
             android:textColor="@android:color/white"
             tools:text="Judul" />
 
-        <TextView
-            android:id="@+id/textViewDesripsi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:padding="16dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            tools:text="Deskripsi" />
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:alpha="0.3"
-            android:background="#424242" />
     </RelativeLayout>
 
 </android.support.v7.widget.CardView>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="kategori">
+        <item> Sejarah </item>
+        <item> Pariwisata </item>
+        <item> Kuliner </item>
+        <item> Budaya </item>
+    </string-array>
+
+    <string-array name="penjelasan">
+        <item> Kota yang terkenal akan buah apelnya ini berdiri sejak tahun 1914, dimana banyak sekali kejadian perjuangan didalamnya </item>
+        <item> Kota malang memiliki beragam pariwisata, diantaranya adalah gunung, air terjun, pantai, hingga perkebunan </item>
+        <item> Makanan dari malang didominasi oleh makanan hasil percampuran budaya malang dan luar malang, selain itu malang juga memiliki makanan khas sendiri </item>
+        <item> Malang terkenal akan budaya nya yang modern yaitu bahasa ngalaman, dimana kata-kata dibalik dalam penulisan maupun pelafalan </item>
+    </string-array>
+
+    <string-array name="isi">
+        <item> Kota yang terkenal akan buah apelnya ini berdiri sejak tahun 1914, dimana banyak sekali kejadian perjuangan didalamnya </item>
+        <item> Kota malang memiliki beragam pariwisata, diantaranya adalah gunung, air terjun, pantai, hingga perkebunan </item>
+        <item> Makanan dari malang didominasi oleh makanan hasil percampuran budaya malang dan luar malang, selain itu malang juga memiliki makanan khas sendiri </item>
+        <item> Malang terkenal akan budaya nya yang modern yaitu bahasa ngalaman, dimana kata-kata dibalik dalam penulisan maupun pelafalan </item>
+    </string-array>
+
+    <array name="kategori_foto">
+        <item>@drawable/a</item>
+        <item>@drawable/b</item>
+        <item>@drawable/c</item>
+        <item>@drawable/d</item>
+    </array>
+
+</resources>

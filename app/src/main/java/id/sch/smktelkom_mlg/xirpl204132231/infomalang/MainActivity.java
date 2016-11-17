@@ -1,15 +1,27 @@
 package id.sch.smktelkom_mlg.xirpl204132231.infomalang;
 
+import android.content.res.Resources;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.util.ArrayList;
+
+import id.sch.smktelkom_mlg.xirpl204132231.infomalang.adapter.HomeAdapter;
+import id.sch.smktelkom_mlg.xirpl204132231.infomalang.model.Home;
+
 public class MainActivity extends AppCompatActivity {
+    ArrayList<Home> mList = new ArrayList<>();
+    HomeAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,14 +30,40 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        mAdapter = new HomeAdapter(mList);
+        recyclerView.setAdapter(mAdapter);
+
+        fillData();
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
             }
         });
+    }
+
+    private void fillData() {
+        Resources resources = getResources();
+        String[] arJudul = resources.getStringArray(R.array.kategori);
+        TypedArray a = resources.obtainTypedArray(R.array.kategori_foto);
+        Drawable[] arFoto = new Drawable[a.length()];
+
+        for (int i = 0; i < arFoto.length; i++) {
+            arFoto[i] = a.getDrawable(i);
+        }
+
+        for (int i = 0; i < arJudul.length; i++) {
+            mList.add(new Home(arJudul[i], arFoto[i]));
+        }
+        mAdapter.notifyDataSetChanged();
+
     }
 
     @Override
