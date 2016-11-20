@@ -26,3 +26,9 @@ XI RPL 2
 # Sekolah : 
 
 SMK TELKOM Malang
+
+# Sreenshoot Hasil
+
+Home
+
+![screenshoot](https://github.com/auralntng/InfoMalang/blob/master/home.jpeg?raw=true)
