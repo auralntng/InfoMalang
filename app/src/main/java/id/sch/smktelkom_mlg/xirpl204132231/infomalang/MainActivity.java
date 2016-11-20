@@ -19,7 +19,8 @@ import java.util.ArrayList;
 import id.sch.smktelkom_mlg.xirpl204132231.infomalang.adapter.HomeAdapter;
 import id.sch.smktelkom_mlg.xirpl204132231.infomalang.model.Home;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+{
     ArrayList<Home> mList = new ArrayList<>();
     HomeAdapter mAdapter;
 
@@ -37,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
 
         fillData();
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,11 +55,13 @@ public class MainActivity extends AppCompatActivity {
         TypedArray a = resources.obtainTypedArray(R.array.kategori_foto);
         Drawable[] arFoto = new Drawable[a.length()];
 
-        for (int i = 0; i < arFoto.length; i++) {
+        for (int i = 0; i < arFoto.length; i++)
+        {
             arFoto[i] = a.getDrawable(i);
         }
-
-        for (int i = 0; i < arJudul.length; i++) {
+        a.recycle();
+        for (int i = 0; i < arJudul.length; i++)
+        {
             mList.add(new Home(arJudul[i], arFoto[i]));
         }
         mAdapter.notifyDataSetChanged();
