@@ -18,6 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".IsiActivity"
+            android:label="@string/title_activity_isi"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SejarahActivity"
+            android:label="@string/title_activity_sejarah"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

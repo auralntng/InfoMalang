@@ -1,5 +1,7 @@
 package id.sch.smktelkom_mlg.xirpl204132231.infomalang.adapter;
 
+import android.content.Context;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,8 +20,11 @@ import id.sch.smktelkom_mlg.xirpl204132231.infomalang.model.Home;
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>
 {
     ArrayList<Home> homeList;
+    IHomeAdapter mIHomeAdapter;
 
-    public HomeAdapter(ArrayList<Home> homeList){this.homeList = homeList;
+    public HomeAdapter(Context context, ArrayList<Home> homeList) {
+        this.homeList = homeList;
+        mIHomeAdapter = (IHomeAdapter) context;
     }
 
     @Override
@@ -33,7 +38,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>
     public void onBindViewHolder(ViewHolder holder, int position) {
         Home home = homeList.get(position);
         holder.tvJudul.setText(home.judul);
-        holder.ivFoto.setImageDrawable(home.foto);
+        holder.ivFoto.setImageURI(Uri.parse(home.foto));
 
     }
 
@@ -42,6 +47,10 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>
         if (homeList != null)
             return homeList.size();
         return 0;
+    }
+
+    public interface IHomeAdapter {
+        void doClick(int pos);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder
@@ -53,7 +62,15 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>
             super(itemView);
             ivFoto = (ImageView) itemView.findViewById(R.id.imageView);
             tvJudul = (TextView) itemView.findViewById(R.id.textViewJudul);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mIHomeAdapter.doClick(getAdapterPosition());
+                }
+            });
         }
+
 
     }
 
